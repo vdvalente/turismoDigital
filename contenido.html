@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+     <link rel="stylesheet" href="fonts/style.css">
+    <title>Contenido</title>
+</head>
+<body>
+    <div class="container">
+      <div id="app">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd !important;">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"><span class="icon-home"></span>Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            filtrar
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#" aria-labelledby="navbarDropright">Continente
+                            </a>
+                            <div class="btn-group dropright" aria-labelledby="navbarDropright">
+                              <a class="dropdown-item" href="#">Europa</a>
+                            </div>
+                            <a class="dropdown-item" href="#">Pais</a>
+                            <div class="dropdown-divider">Ciudad</div>
+                          </div> 
+                        </li>
+                        <div class="titulo">
+                          <h3>Información</h3>
+                        </div>
+                      </ul>
+                    </div>
+                  </nav> 
+            <img :src="image" alt="" class="imagen"> 
+            <div class="mensaje" v-if="comment">
+              <textarea class="txt col-12" style="margin:auto"></textarea>
+              <button class="comentar">Publicar</button>
+            </div>
+            <div class="comentario" v-else>
+              <div  v-if= " image == './img/piramide-giza.jpg'"> 
+                <p class="parrafo">La Piramide giza es la  piramidemás antigua de las siete maravillas del mundo y la única que aún perdura, además de ser la mayor de las pirámides de Egipto. Fue ordenada a construir por el faraón Keops de la cuarta dinastía del Antiguo Egipto Keops. El arquitecto de dicha obra es Hemiunu.1​
+                  Menfis y su necrópolis - Zonas de las pirámides desde Guiza hasta Dahshur UNESCO logo.svg Welterbe.svg
+                  Patrimonio de la Humanidad de la Unesco Menfis y su necrópolis - Zonas de las pirámides desde Guiza hasta Dahshur ubicada en EgiptoMenfis y su necrópolis - Zonas de las pirámides desde Guiza hasta DahshurMenfis y su necrópolis - Zonas de las pirámides desde Guiza hasta Dahshur
+                  Ubicación de Menfis y su necrópolis - Zonas de las pirámides desde Guiza hasta Dahshur en Egipto. País	Flag of Egypt.svg Egipto Tipo	Cultural Criterios	i, iii, vi N.° identificación	86 Región	Estados árabes Año de inscripción	1979 (III sesión) [editar datos en Wikidata] La fecha estimada de terminación de la construcción de la Gran Pirámide es alrededor de 2570 a. C., siendo la primera y mayor de las tres grandes pirámides de la Necrópolis de Guiza, 
+                  situada en las afueras de El Cairo, en Egipto. Fue el edificio más alto de la Tierra durante 3800 años,2​ hasta que en el siglo XIV fue superado por el chapitel de la Catedral de Lincoln, en InglaterraNota 1​, y el edificio de piedra más alto del mundo hasta bien entrado el siglo XIX, siendo entonces superado por la aguja de la iglesia de San Nikolai​</p>
+              </div>
+              <div v-else-if= "image == './img/pozo-iniciatico.jpg'">
+                <p class="parrafo">Calificada de torre invertida, recorrer los tuneles que llevan hasta ella y su escalinata, simbolizan un rito iniciático  De todos estos monumentos, el más simbólico es el  pozo iniciático. El pozo es una especie de torre invertida o metida  en la tierra, de  27  metros  de  profundidad, con una escalinata en espiral por la que se puede ascender, con escalones, descansillos, columnas y arcos románicos.
+                  Los descansillos  forman 9 pisos, que han  sido  asociados  a los  9 niveles del infierno de Dante. Entre  descansillo  y  descansillo  hay  exactamente  15 escalones. a  la base del pozo, en forma de patio decorado con una estrella de 8 puntas, podía mirar y hacia arriba, donde veía el cielo  o “la iluminación” y una escalinata en espiral por la que se ascendía para poder alcanzar este conocimiento.
+                </p>
+              </div>
+              <div v-else-if = "image == './img/aokigahara-forest.jpg'">
+                <p class="parrafo">
+                  El Aokigahara (青木ヶ原?), conocido como el Mar de Árboles (樹海 Jukai?), es un bosque ubicado al noroeste de la base del monte Fuji entre la prefectura de Yamanashi y la de Shizuoka, Japón. El bosque tiene una asociación histórica con demonios de la mitología japonesa En el bosque Aokigahara el viento queda bloqueado por los espesos árboles y la vida silvestre es casi inexistente, lo que lo hace excepcionalmente silencioso,
+                  además de que está repleto de cavernas rocosas y heladas. Al igual que el puente Golden Gate en San Francisco, en Estados Unidos, este bosque japonés es uno de los lugares del mundo en el que más personas se quitan la vida. Adentrarse en las entrañas de Aokigahara es introducirse en un universo de silencio, en un mar de árboles profundo y oscuro, en el que perderse suele convertirse en algo habitual. Aquí resulta difícil orientarse ante la imposibilidad de utilizar brújulas u otros instrumentos destinados a tal fin.
+                  Por ello, no resulta extraño encontrar cintas de colores atadas a los árboles que permiten a los suicidas marcar el camino y despedirse de esta forma del paisaje natural que les rodea - y, según algunos, facilitarles el regreso si deciden desistir en su intento-. La imagen resulta desoladora, como la de su aparcamiento en la que suelen permanecer por largo tiempo vehículos abandonados por quienes finalmente no regresaron.
+                </p>
+              </div>
+              <div  v-else-if = "image == './img/gran-muralla-china.jpg'">
+                <p class="parrafo">
+                  La Gran Muralla (en idioma original 长城, changcheng) es una antigua fortificación china construida y reconstruida entre el siglo V a. C. y el siglo XVI (Edad Moderna) para proteger la frontera norte del Imperio chino durante las sucesivas dinastías imperiales de los ataques de los nómadas xiongnu de Mongolia y Manchuria.
+                  Contando sus ramificaciones y construcciones secundarias, se calcula que tiene sobre unos 21 200 kilómetros de largo,1​ desde la frontera con Corea, al borde del río Yalu, hasta el desierto de Gobi, a lo largo de un arco que delinea aproximadamente el borde sur de Mongolia Interior, aunque hoy solo se conserva un 30 % de ella.2​En promedio, mide de 6 a 7 metros de alto y de 4 a 5 metros de ancho.
+                  La muralla fue designada Patrimonio de la Humanidad por la Unesco en 1987. El 26 de enero de 2007 se dio a conocer que la muralla china fue elegida como una de las ganadoras en la lista de Las Nuevas Siete Maravillas del Mundo Moderno.
+                </p>
+              </div>
+              <div  v-else-if="image == './img/stonehenge.jpg'">
+              <p class="parrafo">
+                  Stonehenge es un monumento megalítico tipo crómlech, además de otros elementos como hoyos, fosos, montículos, etc. construido entre el final del Neolítico y principios de la Edad del Bronce, situado cerca de Amesbury, en el condado de Wiltshire, Inglaterra, a unos quince kilómetros al norte de Salisbury.
+                  Los arqueólogos consideran como probables las fechas de construcción de las distintas fases y utilización entre el 3100 a. C. y el 2000 a. C. El foso y montículos circulares, los que constituyen la primera fase del monumento, se han datado en unos 5100 años atrás. La datación por radiocarbono sugiere que la primera piedra azul fue erigida entre el 2400 y el 2200 a.C.,1​ aunque no se descarta que hubiera habido asentamiento o uso de la zona anteriores al 3100 a. C.
+                  La finalidad que tuvo la construcción de este gran monumento se ignora, pero se supone que se utilizaba como templo religioso, monumento funerario u observatorio astronómico que servía para predecir las estaciones.
+                  En el solsticio de verano, el Sol salía justo atravesando el eje de la construcción, lo que hace suponer que los constructores tenían conocimientos de astronomía. El mismo día, el Sol se ocultaba atravesando el eje del Woodhenge, donde se han encontrado multitud de huesos de animales y objetos que evidencian que se celebraban grandes fiestas, probablemente al anochecer.8​
+                  Han sido encontrados 300 enterramientos de restos humanos previamente cremados, datados entre el año 3030 y 2340 a. C.11​ Dado el escaso número de entierros para un período tan largo, se estima que no se trata de un cementerio para la generalidad de los muertos sino para determinadas personas escogidas. La piedra era el símbolo de lo eterno; servía para marcar o delimitar puntos energéticos terrenales (telúricos) y hasta para albergar espíritus elementales. 
+                  Así es que Stonehenge podría haber sido utilizada junto con Woodhenge en ceremonias religiosas de culto a los muertos y a la vida, tal vez simbolizada por el círculo de madera.8​
+              </p>
+            </div>
+            <div  v-else-if="image == './img/templo-del-cielo.jpg'">
+              <p class="parrafo">
+                  El Templo del Cielo (en chino simplificado 天坛, pinyin Tian Tan) es el mayor templo de su clase en toda la República Popular de China. Fue construido en el año 1420 y tanto la dinastía Ming como la Qing lo utilizaron para adorar por las cosechas (en primavera) y dar las gracias al cielo por los frutos obtenidos (otoño). Desde el año 1998 está considerado como Patrimonio de la Humanidad por la Unesco.
+                  Está situado en el parque Tiantan Gongyuan, al sur de la ciudad de Pekín. El Templo del Cielo es en realidad un conjunto de edificios: al norte se sitúa el Salón de Oración por la Buena Cosecha; al sur, el Altar Circular y la Bóveda Imperial del Cielo.
+                  El conjunto está rodeado de una muralla interior y otra exterior formadas por una base rectangular que significa la tierra y rematadas con formas redondeadas para simbolizar el cielo. Las murallas dividen el recinto en dos zonas: la interior y la exterior.
+              </p>
+            </div>
+          </div>
+          <div class="icon col-12" style="margin:auto">
+            <button class="bubble " @click="comment = !comment"><span class="icon-bubble"></span></button>
+            <button class="star " v-bind:style="{color: actColor }" @click="favorite"><span class="icon-star-full"></span></button>
+            <button class="heart " v-bind:style="{color:activeColor }" @click="like"><span class="icon-heart"></span></button>
+          </div>
+        </div>
+      </div>
+      
+      
+    <script src="src/vue.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'interfaz-icon';
+  src:  url('interfaz-icon.eot?tczlyt');
+  src:  url('interfaz-icon.eot?tczlyt#iefix') format('embedded-opentype'),
+    url('interfaz-icon.ttf?tczlyt') format('truetype'),
+    url('interfaz-icon.woff?tczlyt') format('woff'),
+    url('interfaz-icon.svg?tczlyt#interfaz-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'interfaz-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: "\e900";
+}
+.icon-box-remove:before {
+  content: "\e95f";
+}
+.icon-bubble:before {
+  content: "\e96b";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-star-empty:before {
+  content: "\e9d7";
+}
+.icon-star-full:before {
+  content: "\e9d9";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-mail3:before {
+  content: "\ea85";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
