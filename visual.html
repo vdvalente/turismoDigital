@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
+     <link rel="stylesheet" href="fonts/style.css">
+    <title>Videos</title>
+</head>
+<body>
+    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd !important;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html"><span class="icon-home"></span>Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                filtrar
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#" aria-labelledby="navbarDropright">Continente
+                </a>
+                <div class="btn-group dropright" aria-labelledby="navbarDropright">
+                  <a class="dropdown-item" href="#">Europa</a>
+                </div>
+                <a class="dropdown-item" href="#">Pais</a>
+                <div class="dropdown-divider">Ciudad</div>
+              </div> 
+            </li>
+            <div class="titulo">
+              <h3>Videos</h3>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <div class="videos">
+            <video class="video" src="videos/piramide-giza.mp4" poster="img/piramide-giza.jpg" controls title="video acerca de la piramide giza"></video>
+            <video class="video" src="videos/pozo-iniciatico.mp4" poster="img/pozo-iniciatico.jpg" controls title="video acerca del pozo iniciatico"></video>
+            <video class="video" src="videos/aokigahara-forest.mp4" poster="img/aokigahara-forest.jpg" controls title="video acerca del bosque aokigahara"></video>
+      </div>
+    </div>
+    <script src="src/vue.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>
