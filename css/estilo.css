@@ -16,6 +16,15 @@
   height:100%;
   border:5px solid #b8daff;
 }
+.imagen:hover {
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+}
+
+.imagen {
+  overflow:hidden;
+}
+
 .titulo h3{
   text-align: center;
  }
@@ -103,3 +112,4 @@ input[type="file"].slotted {
   background: rgb(97, 253, 58);
   color:black;
 } 
+

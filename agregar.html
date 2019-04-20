@@ -27,10 +27,13 @@
                     </div>
               </nav>
               <div class="cabecera">
-                <input class="agregar_foto" type="file", @change="processFile($event)">
+                <input class="agregar_foto" type="file">
               </div>
-              <textarea class="agregar_parrafo" placeholder="Agrega un contenido sobre el lugar que publicas"></textarea>
-              <button class="comentar" value="publicar">Publicar</button> 
+              <textarea class="agregar_parrafo" placeholder="Agrega un contenido sobre el lugar que publicas" v-model="comentario"></textarea>
+              <button class="comentar" value="publicar" @click="addComentario">Publicar</button>
+              <li v-for="com of coments">
+                {{com.usuario}}
+              </li> 
             </div>
         </div>        
     <script src="src/vue.js"></script>

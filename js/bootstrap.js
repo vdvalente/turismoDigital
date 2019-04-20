@@ -4438,7 +4438,15 @@
     image: "",
     activeColor:'',
     actColor:'',
+    publicar:'',
+    user:'',
+    pass:'',
+    agregar:false,
     comment: false,
+    animation: false,
+    palabra:[
+      {},
+      ],
     
   },
     created() {
@@ -4470,6 +4478,15 @@
        this.activeColor = 'red';
      }
     },
+    add_comentario(){
+      console.log(this.publicar);
+      if(this.publicar == ""){
+        alert("Por favor escriba un comentario")
+      }else{
+        this.palabra.push({usuario:this.publicar})
+        console.log(this.palabra);
+      }
+    },
     favorite(){
       if (this.actColor==''){
         this.actColor ='yellow';
@@ -4478,6 +4495,23 @@
       }else if (this.actColor=='black'){
         this.actColor = 'yellow';
       }           
+      },
+      login(){
+        if(this.user=='victor' && this.pass == '20792785'){
+          this.agregar = true;
+          alert("hola "+this.user+" bienvenido");
+        }else{
+          alert("usuario o contraseña incorrecto por favor revise bien");
+          
+        }
+      },
+      logout(){
+        if (this.agregar==true){
+          alert("Vuelva pronto");
+          this.user="";
+          this.pass="";
+          this.agregar=false
+        }
       }
     }
 })
@@ -4529,7 +4563,7 @@ var vue3=new Vue({
   methods: {
     processFile(event) {
       this.someData = event.target.files[0]
-    }
+    },
   }
 }) 
 

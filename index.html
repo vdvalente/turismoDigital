@@ -5,8 +5,8 @@
 	 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="fonts/style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="#"><span class="icon-home"></span>Inicio</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="agregar">
           <a class="nav-link" href="agregar.html">Agregar</a>
         </li>
         <li class="nav-item dropdown">
@@ -31,26 +31,79 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#" aria-labelledby="navbarDropright">Continente
             </a>
-            <div class="btn-group dropright" aria-labelledby="navbarDropright">
-              <a class="dropdown-item" href="#">Europa</a>
-            </div>
             <a class="dropdown-item" href="#">Pais</a>
             <div class="dropdown-divider">Ciudad</div>
           </div> 
+      </li>
+      <li>
+        <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">Ayuda</a>
+         <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Inicie sesion para agregar contenido a nuestra pagina, las fotos seran enviadas a nuestro sistema que confirmara si cumple con los
+                requisitos de la pagina.<br>
+                Acceda al contenido de las imagenes dando click en las que estan en blanco y negro<br>
+                Use la barra de busqueda para encontrar una escultura o Arquitectura en espesifico
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"title="Busca por Nombre,ciudad o pais">
         <button class="btn btn-busqueda-success my-2 my-sm-0" type="submit">Buscar</button>
-        <section>
-        <input class = "form-control mr-sm-2" type="text" placeholder="Escribe tu nombre">
+        <section v-if="!agregar">
+        <input class = "form-control mr-sm-2" type="text" placeholder="Escribe tu nombre" v-model="user">
         </section>
-        <section>
-        <input class ="form-control mr-sm-2" type="password" placeholder="Contraseña">
+        <section v-if="!agregar">
+        <input class ="form-control mr-sm-2" type="password" placeholder="Contraseña" v-model="pass">
         </section>
-        <button type="button" class="btn btn-busqueda-success my-2 my-sm-0" title="Ingresa para ver mas contenido">Login</button>
-        <a  href="./registro.html">Registrarse&nbsp&nbsp</a>
-        <a  href="#" @click="comment = !comment">¿Olvido su Contraseña?</a>
+        <section v-if="!agregar">
+        <button type="submit" class="btn btn-busqueda-success my-2 my-sm-0" title="Ingresa para ver mas contenido" @click="login">Login
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="animation"></span>
+          <span class="sr-only">Loading...</span>
+        </button>
+        </section>
+        <section v-if="agregar">
+            <button type="submit" class="btn btn-busqueda-success my-2 my-sm-0" title="Ingresa para ver mas contenido" @click="logout">logout</button>
+        </section>
+        <section v-if="agregar">
+            <a href="registro.html">Perfil</a>
+        </section>
+        <a  href="./registro.html" v-if="!agregar">Registrarse&nbsp&nbsp</a>
+        <a href="#" data-toggle="modal" data-target="#exampleModal2">¿Olvido su Contraseña?</a>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Recuperación de Contraseña</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="email" placeholder="escriba su correo">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </form>
     </div>
   </nav>
@@ -104,22 +157,22 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-12 col-sm-6 col-md-4" id="piramide">
-      <a href="./contenido.html?img=piramide-giza.jpg"><img src="img/piramide-giza.jpg" class="img-fluid img-mb" id="piramide"  alt=""></a>
+      <a href="./contenido.html?img=piramide-giza.jpg"><img src="img/piramide-giza.jpg" class="img-fluid img-mb" id="piramide"  alt="piramide giza" title="click aqui para ver mas informacion de la piramide giza"></a>
 		</div>
 		<div class="col-12 col-sm-6 col-md-4">
-			<a href="./contenido.html?img=pozo-iniciatico.jpg"><img src="img/pozo-iniciatico.jpg" class="img-fluid img-mb" alt=""></a>
+			<a href="./contenido.html?img=pozo-iniciatico.jpg"><img src="img/pozo-iniciatico.jpg" class="img-fluid img-mb" alt="pozo iniciatico" title="click aqui para ver mas informacion del pozo iniciatico"></a>
 		</div>
 		<div class="col-12 col-sm-6 col-md-4">
-			<a href="./contenido.html?img=aokigahara-forest.jpg"><img src="img/aokigahara-forest.jpg" class="img-fluid img-mb" alt=""></a>
+			<a href="./contenido.html?img=aokigahara-forest.jpg"><img src="img/aokigahara-forest.jpg" class="img-fluid img-mb" alt="bosque aokigahara" title="click aqui para ver mas informacion del bosque aokigahara"></a>
     </div>
     <div class="col-12 col-sm-6 col-md-4">
-      <a href="./contenido.html?img=gran-muralla-china.jpg"><img src="img/gran-muralla-china.jpg" class="img-fluid img-mb" alt=""></a>
+      <a href="./contenido.html?img=gran-muralla-china.jpg"><img src="img/gran-muralla-china.jpg" class="img-fluid img-mb" alt="la gran muralla china" title="click aqui para ver mas informacion de la gran muralla china"></a>
     </div>
     <div class="col-12 col-sm-6 col-md-4">
-     <a href="./contenido.html?img=stonehenge.jpg"><img src="img/stonehenge.jpg" class="img-fluid img-mb" alt=""></a>
+     <a href="./contenido.html?img=stonehenge.jpg"><img src="img/stonehenge.jpg" class="img-fluid img-mb" alt="stonehenge" title="click aqui para ver mas informacion de las piedras stonehenge"></a>
     </div>
     <div class="col-12 col-sm-6 col-md-4">
-      <a href="./contenido.html?img=templo-del-cielo.jpg"><img src="img/templo-del-cielo.jpg" class="img-fluid img-mb" alt=""></a>
+      <a href="./contenido.html?img=templo-del-cielo.jpg"><img src="img/templo-del-cielo.jpg" class="img-fluid img-mb" alt="templo del cielo" title="click aqui para ver mas informacion del templo del cielo"></a>
     </div>
 	</div>
 </div>

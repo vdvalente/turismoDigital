@@ -90,11 +90,21 @@ var vue2 = new Vue({
 var vue3=new Vue({ 
   el: '#app3',
   data: {
-    
+    coments: [{}],
+    comentario:''
+    /* someData:null */
   },
   methods: {
-    processFile(event) {
-      this.someData = event.target.files[0]
+    /* processFile(event) {
+      this.someData = event.target.files[0];
+    }, */
+    addComentario(){
+      if(this.comentario==""){
+        alert("El comentario no puede estar vacio")
+      }else{
+        this.coments.push({usuario:this.comentario})
+      }
+      
     }
   }
 })
