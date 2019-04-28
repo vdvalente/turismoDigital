@@ -19,10 +19,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="#"><span class="icon-home"></span>Inicio</a>
+            <a class="nav-link" href="#"><span class="icon-home" id="inicio"></span>Inicio</a>
         </li>
         <li class="nav-item" v-if="agregar">
-          <a class="nav-link" href="agregar.html">Agregar</a>
+          <a class="nav-link" href="agregar.html" id="agregar">Agregar</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon-search"></span>
@@ -65,13 +65,13 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search"title="Busca por Nombre,ciudad o pais">
         <button class="btn btn-busqueda-success my-2 my-sm-0" type="submit">Buscar</button>
         <section v-if="!agregar">
-        <input class = "form-control mr-sm-2" type="text" placeholder="Escribe tu nombre" v-model="user">
+        <input class = "form-control mr-sm-2" type="text" id="usuario" placeholder="Escribe tu nombre" v-model="user">
         </section>
         <section v-if="!agregar">
-        <input class ="form-control mr-sm-2" type="password" placeholder="Contraseña" v-model="pass">
+        <input class ="form-control mr-sm-2" type="password" id="contraseña" placeholder="Contraseña" v-model="pass">
         </section>
         <section v-if="!agregar">
-        <button type="submit" class="btn btn-busqueda-success my-2 my-sm-0" title="Ingresa para ver mas contenido" @click="login">Login
+        <button type="submit" class="btn btn-busqueda-success my-2 my-sm-0" id="ingresar" title="Ingresa para ver mas contenido" @click="login">Login
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="animation"></span>
           <span class="sr-only">Loading...</span>
         </button>
