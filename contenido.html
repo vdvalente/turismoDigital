@@ -97,7 +97,7 @@
             <a href="visual.html">has click aqui para ver videos sobre las imagenes</a>
           </div>
           <div class="icon col-12" style="margin:auto">
-            <button class="bubble " @click="comment = !comment"><span class="icon-bubble"></span></button>
+            <button class="bubble" id="bubble" @click="comment = !comment"><span class="icon-bubble"></span></button>
             <button class="star " v-bind:style="{color: actColor }" @click="favorite"><span class="icon-star-full"></span></button>
             <button class="heart " id="heart" v-bind:style="{color:activeColor }" @click="like"><span class="icon-heart"></span></button>
           </div>
