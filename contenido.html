@@ -43,7 +43,7 @@
             </nav>      
             <img :src="image" alt="" class="imagen">
             <div class="mensaje" v-if="comment">
-              <textarea class="txt col-12" id="textarea2" style="margin:auto" v-model="publicar"></textarea> 
+              <textarea class="txt col-12" id="textarea" style="margin:auto" v-model="publicar"></textarea> 
               <button class="comentar" @click="add_comentario">Publicar</button>
               <li v-for="text of palabra">
                 {{text.usuario}}
