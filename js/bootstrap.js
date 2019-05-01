@@ -4551,6 +4551,23 @@ var vue2 = new Vue({
         progress+= 15
       }
       this.progress_bar_style.width = `${progress}%`
+    },
+    registrar(){
+      if (this.inputOne != "" && this.inputTwo!="" && this.inputTree != "" && this.inputFour != "" && this.inputFive !="" && this.inputSix!="")
+      {
+        if (this.inputTree != this.inputFour || this.inputFive != this.inputSix)
+        {
+          alert("error al registrar")
+        }
+        else
+        {
+          alert("exito al registrar")
+        }
+      }
+      else
+      {
+        alert("error al registrar")
+      }
     }
   }
 })
